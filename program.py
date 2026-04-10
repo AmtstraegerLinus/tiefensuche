@@ -13,6 +13,7 @@ knoten = []
 
 
 def dfs(matrix, start_knoten, gesuchter_knoten=-1, besucht=None):
+    print("Push Knoten", namen[start_knoten])
     if besucht is None:
         besucht = set()
 
@@ -27,9 +28,9 @@ def dfs(matrix, start_knoten, gesuchter_knoten=-1, besucht=None):
     for nachbar in range(len(matrix[start_knoten])):
         if matrix[start_knoten][nachbar] == 1 and nachbar not in besucht:
             dfs(matrix, nachbar, gesuchter_knoten, besucht)
+    print("Ende Knoten", namen[start_knoten])
 
 
 dfs(matrix, 0)
-# Ausgabe: A B D E C F
 
 print(knoten)
